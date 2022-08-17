@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-message = ARGV[0]
+message = ARGV.join(' ')
 
 system('git add .')
 system("git commit -m \"#{message}\"")
