@@ -1,16 +1,24 @@
-<%= form_with model: @user, url: sign_up_path do |form| %>
+<h1 class="text-center fs-6 mb-3">Sign Up</h1>
+
+<div class="mx-auto w-40">
+  <%= form_with model: @user, url: sign_up_path do |form| %>
   <%= render partial: "shared/form_errors", locals: { object: form.object } %>
-  <div>
+  <div class="mb-2">
     <%= form.label :email %>
-    <%= form.email_field :email, required: true %>
+    <%= form.email_field :email, required: true, class: 'd-block border w-100 radius-1 p-2' %>
   </div>
-  <div>
+  <div class="my-2">
+    <%= form.label :username %>
+    <%= form.text_field :username, required: true, class: 'd-block border w-100 radius-1 p-2' %>
+  </div>
+  <div class="my-2">
     <%= form.label :password %>
-    <%= form.password_field :password, required: true %>
+    <%= form.password_field :password, required: true, class: 'd-block border w-100 radius-1 p-2' %>
   </div>
-  <div>
+  <div class="my-2">
     <%= form.label :password_confirmation %>
-    <%= form.password_field :password_confirmation, required: true %>
+    <%= form.password_field :password_confirmation, required: true, class: 'd-block border w-100 radius-1 p-2' %>
   </div>
-  <%= form.submit "Sign Up", { class: 'btn-primary' } %>
-<% end %>
+  <%= form.submit "Sign Up", { class: 'py-3 px-4 bg-primary mt-2 color-light radius-2' } %>
+  <% end %>
+</div>

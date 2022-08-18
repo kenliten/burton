@@ -1,0 +1,19 @@
+<h1 class="text-center fs-6 mb-3">Sign In</h1>
+
+<div class="mx-auto w-40">
+  <%= form_with url: login_path, scope: :user do |form| %>
+  <div class="my-2">
+    <%= form.label :email %>
+    <%= form.email_field :email, required: true, class: 'd-block border w-100 radius-1 p-2' %>
+  </div>
+  <div class="my-2">
+    <%= form.label :password %>
+    <%= form.password_field :password, required: true, class: 'd-block border w-100 radius-1 p-2' %>
+  </div>
+  <div>
+    <%= form.label :remember_me %>
+    <%= form.check_box :remember_me %>
+  </div>
+  <%= form.submit "Sign In", { class: 'py-3 px-4 bg-primary mt-2 color-light radius-2' }  %>
+  <% end %>
+</div>
